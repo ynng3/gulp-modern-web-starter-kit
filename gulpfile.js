@@ -20,19 +20,22 @@ gulp.task('jquery', function () {
 // 이미지 복사 태스크
 gulp.task('images', function () {
   return gulp.src('src/assets/images/**/*')
-    .pipe(gulp.dest('dist/assets/images'));
+    .pipe(gulp.dest('dist/assets/images'))
+    .pipe(browserSync.stream());
 });
 
 // JS 복사 태스크
 gulp.task('js', function () {
   return gulp.src('src/assets/js/**/*')
-    .pipe(gulp.dest('dist/assets/js'));
+    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(browserSync.stream());
 });
 
 // HTML 복사 태스크
 gulp.task('html', function () {
   return gulp.src('src/**/*.html')
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 });
 
 // BrowserSync 초기화 및 서버 시작 태스크
@@ -46,6 +49,7 @@ gulp.task('browser-sync', function () {
   gulp.watch('src/assets/scss/**/*', gulp.series('sass'));
   gulp.watch('src/assets/images/**/*', gulp.series('images'));
   gulp.watch('src/assets/js/**/*', gulp.series('js'));
+  gulp.watch('src/**/*', gulp.series('html'));
   gulp.watch('*.html').on('change', browserSync.reload);
 });
 
