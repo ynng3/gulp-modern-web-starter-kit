@@ -6,7 +6,7 @@ const del = require('del');
 // Sass 컴파일 태스크
 gulp.task('sass', function () {
   return gulp.src('src/assets/scss/**/*.scss')
-    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(sass({ outputStyle: 'compressed', sourceMaps: true }))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe(browserSync.stream());
 });
