@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
-const $ = require('jquery');
+const del = require('del');
 
 // Sass 컴파일 태스크
 gulp.task('sass', function () {
@@ -38,6 +38,11 @@ gulp.task('html', function () {
     .pipe(browserSync.stream());
 });
 
+// Clean 태스크: 'dist' 디렉토리 비우기
+gulp.task('clean', function () {
+  return del(['dist']);
+});
+
 // BrowserSync 초기화 및 서버 시작 태스크
 gulp.task('browser-sync', function () {
   browserSync.init({
@@ -53,5 +58,5 @@ gulp.task('browser-sync', function () {
   gulp.watch('*.html').on('change', browserSync.reload);
 });
 
-// 기본 태스크 설정: 'sass', 'jquery', 'images', 'js', 'browser-sync' 순서로 실행
-gulp.task('default', gulp.series('sass', 'jquery', 'images', 'js', 'html', 'browser-sync'));
+// 기본 태스크 설정
+gulp.task('default', gulp.series('clean', 'sass', 'jquery', 'images', 'js', 'html', 'browser-sync'));
