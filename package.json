@@ -1,0 +1,33 @@
+{
+  "name": "gulp-modern-web-starter-kit",
+  "version": "1.0.0",
+  "description": "Gulp.js로 시작하는 Modern Web Development Starter Kit(Sass + jQuery + BrowserSync)",
+  "keywords": [
+    "gulp",
+    "gulp-starter-kit",
+    "sass",
+    "scss",
+    "jquery",
+    "browser-sync",
+    "modern-web-dev"
+  ],
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "알노리",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ynng3/gulp-modern-web-starter-kit.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "jquery": "^3.7.1",
+    "sass": "^1.70.0"
+  }
+}
