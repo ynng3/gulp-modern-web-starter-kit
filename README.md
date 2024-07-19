@@ -11,7 +11,7 @@
 - Gulp: 자동화 도구
 - gulp-sass: Sass 컴파일러
 - browser-sync: 개발 서버 및 브라우저 싱크
-- jQuery: 자바스크립트 라이브러리
+- jQuery: 제이쿼리 라이브러리
 
 
 ## 설치
